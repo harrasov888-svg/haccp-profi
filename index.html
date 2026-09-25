@@ -7,14 +7,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap&subset=cyrillic" rel="stylesheet">
 <style>
+/* Цветовая схема сайта тёмная и фиксированная (не зависит от темы устройства посетителя) */
 :root{
   --primary:#1D5B62; --accent:#3F9D8F; --warning:#E07A5F;
-  --bg:#FFFFFF; --fg:#1A1A1A; --muted:#5B6270; --soft:#F0F6F4; --card:#FFFFFF; --border:#D9E6E2;
-  --accent-text:#22766B;
-}
-/* Цветовая схема сайта фиксированная (не зависит от тёмной/светлой темы устройства посетителя) */
-:root[data-theme="dark"]{
-  --bg:#0E1417; --fg:#EEF2F3; --muted:#A3AEB3; --soft:#141D21; --card:#182328; --border:#27353B; --accent-text:#5CC9BB;
+  --bg:#0E1417; --fg:#EEF2F3; --muted:#A3AEB3; --soft:#141D21; --card:#182328; --border:#27353B;
+  --accent-text:#5CC9BB;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
@@ -53,9 +50,8 @@ header.top.scrolled{background:color-mix(in srgb,var(--bg) 86%,transparent);back
 .logo-text{display:flex;flex-direction:column}
 .logo b{display:block;font-size:1.15rem;font-weight:800;color:#fff;letter-spacing:.01em}
 .logo span{font-size:.75rem;color:rgba(255,255,255,.8)}
-header.scrolled .logo b{color:var(--primary)}
+header.scrolled .logo b{color:var(--fg)}
 header.scrolled .logo span{color:var(--muted)}
-:root[data-theme="dark"] header.scrolled .logo b{color:var(--fg)}
 
 nav.main{display:none;gap:22px}
 nav.main a{font-size:.9rem;text-decoration:none;color:#fff;font-weight:500}
@@ -103,8 +99,7 @@ header.scrolled .burger{color:var(--fg)}
 .g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
 .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;position:relative}
 .iconbox{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px;background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent-text)}
-.iconbox.warn{background:color-mix(in srgb,var(--warning) 16%,transparent);color:#C2492B}
-:root[data-theme="dark"] .iconbox.warn{color:#FF9B82}
+.iconbox.warn{background:color-mix(in srgb,var(--warning) 16%,transparent);color:#FF9B82}
 
 .card h3{font-size:1.06rem;margin-bottom:8px}
 .card p{color:var(--muted);font-size:.95rem}
@@ -182,8 +177,7 @@ label{font-size:.88rem;font-weight:600;display:block;margin-bottom:6px}
 label small{font-weight:400;color:var(--muted)}
 input[type=text],input[type=tel],select,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--fg);font:inherit}
 textarea{min-height:90px;resize:vertical}
-.err{color:#C2321B;font-size:.82rem;margin-top:5px;min-height:1em}
-:root[data-theme="dark"] .err{color:#FF8E7A}
+.err{color:#FF8E7A;font-size:.82rem;margin-top:5px;min-height:1em}
 
 .consent{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--muted)}
 .consent input{margin-top:4px;width:18px;height:18px;accent-color:var(--primary)}
