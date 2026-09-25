@@ -12,11 +12,7 @@
   --bg:#FFFFFF; --fg:#1A1A1A; --muted:#5B6270; --soft:#F0F6F4; --card:#FFFFFF; --border:#D9E6E2;
   --accent-text:#22766B;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#0E1417; --fg:#EEF2F3; --muted:#A3AEB3; --soft:#141D21; --card:#182328; --border:#27353B; --accent-text:#5CC9BB;
-  }
-}
+/* Цветовая схема сайта фиксированная (не зависит от тёмной/светлой темы устройства посетителя) */
 :root[data-theme="dark"]{
   --bg:#0E1417; --fg:#EEF2F3; --muted:#A3AEB3; --soft:#141D21; --card:#182328; --border:#27353B; --accent-text:#5CC9BB;
 }
@@ -60,7 +56,7 @@ header.top.scrolled{background:color-mix(in srgb,var(--bg) 86%,transparent);back
 header.scrolled .logo b{color:var(--primary)}
 header.scrolled .logo span{color:var(--muted)}
 :root[data-theme="dark"] header.scrolled .logo b{color:var(--fg)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) header.scrolled .logo b{color:var(--fg)}}
+
 nav.main{display:none;gap:22px}
 nav.main a{font-size:.9rem;text-decoration:none;color:#fff;font-weight:500}
 header.scrolled nav.main a{color:var(--fg)}
@@ -109,7 +105,7 @@ header.scrolled .burger{color:var(--fg)}
 .iconbox{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px;background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent-text)}
 .iconbox.warn{background:color-mix(in srgb,var(--warning) 16%,transparent);color:#C2492B}
 :root[data-theme="dark"] .iconbox.warn{color:#FF9B82}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .iconbox.warn{color:#FF9B82}}
+
 .card h3{font-size:1.06rem;margin-bottom:8px}
 .card p{color:var(--muted);font-size:.95rem}
 .problem{border-top:4px solid var(--warning)}
@@ -188,7 +184,7 @@ input[type=text],input[type=tel],select,textarea{width:100%;padding:12px 14px;bo
 textarea{min-height:90px;resize:vertical}
 .err{color:#C2321B;font-size:.82rem;margin-top:5px;min-height:1em}
 :root[data-theme="dark"] .err{color:#FF8E7A}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .err{color:#FF8E7A}}
+
 .consent{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--muted)}
 .consent input{margin-top:4px;width:18px;height:18px;accent-color:var(--primary)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
@@ -507,12 +503,8 @@ background:linear-gradient(135deg,var(--primary),var(--accent));display:grid;pla
           <a class="btn btn-outline" href="tel:+79656504850">Позвонить</a>
         </div>
       </div>
-      <div class="maplink">
-        <div>
-          <svg class="ico" style="width:40px;height:40px;color:var(--accent-text)"><use href="#i-pin"/></svg>
-          <p style="margin:8px 0 14px">Здесь в рабочей версии будет карта Яндекса.<br>В предпросмотре встроенные карты недоступны.</p>
-          <a class="btn btn-outline" href="https://yandex.ru/maps/?text=%D0%A3%D1%84%D0%B0%2C%20%D0%9F%D0%B5%D1%80%D0%B2%D0%BE%D0%BC%D0%B0%D0%B9%D1%81%D0%BA%D0%B0%D1%8F%2067" target="_blank" rel="noopener">Открыть в Яндекс.Картах</a>
-        </div>
+      <div class="maplink" style="padding:0;overflow:hidden">
+        <iframe src="https://yandex.ru/map-widget/v1/?text=%D0%A3%D1%84%D0%B0%2C%20%D1%83%D0%BB.%20%D0%9F%D0%B5%D1%80%D0%B2%D0%BE%D0%BC%D0%B0%D0%B9%D1%81%D0%BA%D0%B0%D1%8F%2C%2067" width="100%" height="100%" style="border:0;min-height:320px;display:block" loading="lazy" title="Уфа, ул. Первомайская, 67 — карта"></iframe>
       </div>
     </div>
   </div>
